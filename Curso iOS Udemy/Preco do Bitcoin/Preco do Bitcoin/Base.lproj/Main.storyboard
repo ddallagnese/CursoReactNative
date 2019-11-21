@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Preco_do_Bitcoin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WfN-Wx-np4">
+                                <rect key="frame" x="20" y="208.5" width="335" height="250"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bitcoin" translatesAutoresizingMaskIntoConstraints="NO" id="cuu-5u-p8Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="p0O-CY-Lvq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tgs-m6-r3S">
+                                        <rect key="frame" x="0.0" y="100" width="335" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="fsU-1h-zrc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="55"/>
+                                        <color key="textColor" red="0.95280677080154419" green="0.57203382253646851" blue="0.19131067395210266" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rmc-JC-hBQ">
+                                        <rect key="frame" x="0.0" y="200" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tdf-38-MK2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="Atualizar"/>
+                                        <connections>
+                                            <action selector="atualizarPreco:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFC-ay-GIm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="rmc-JC-hBQ" secondAttribute="trailing" id="DLT-K5-yn6"/>
+                                    <constraint firstItem="rmc-JC-hBQ" firstAttribute="leading" secondItem="WfN-Wx-np4" secondAttribute="leading" id="PV2-aS-g7T"/>
+                                    <constraint firstAttribute="trailing" secondItem="Tgs-m6-r3S" secondAttribute="trailing" id="ZSn-KN-VnB"/>
+                                    <constraint firstItem="Tgs-m6-r3S" firstAttribute="leading" secondItem="WfN-Wx-np4" secondAttribute="leading" id="cXb-Hm-4zE"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WfN-Wx-np4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="aBd-dA-Ecu"/>
+                            <constraint firstItem="WfN-Wx-np4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ax0-aj-kJF"/>
+                            <constraint firstAttribute="trailing" secondItem="WfN-Wx-np4" secondAttribute="trailing" constant="20" id="zzg-6h-8ih"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="botaoAtualizar" destination="rmc-JC-hBQ" id="wqh-EQ-43Z"/>
+                        <outlet property="precoBitcoin" destination="Tgs-m6-r3S" id="0qj-4W-v6L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bitcoin" width="800" height="169"/>
+    </resources>
+</document>

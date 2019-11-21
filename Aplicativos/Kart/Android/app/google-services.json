@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "840819301428",
+    "firebase_url": "https://kart-f292b.firebaseio.com",
+    "project_id": "kart-f292b",
+    "storage_bucket": "kart-f292b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:840819301428:android:3ac652d6583cb0d9",
+        "android_client_info": {
+          "package_name": "com.dallagnese.kart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "840819301428-g2bibpq9s9v6gjik6n6aso4j402kji5n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dallagnese.kart",
+            "certificate_hash": "102284c376a6c458bbd0e4674e72705cc1cce52d"
+          }
+        },
+        {
+          "client_id": "840819301428-lmcb3tf57ak7956nvgirc86hru64ii07.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHig1FGTAGOJjX8qXtQhA8kKqR7BhlClc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "840819301428-lmcb3tf57ak7956nvgirc86hru64ii07.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "840819301428-pq7nt7mrpmvmrh1bq0uvggsvpgpqooiq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "Kart"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

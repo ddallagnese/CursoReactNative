@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pokemon_Go" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5y-oL-l0e">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8df-mB-AbP">
+                                <rect key="frame" x="315" y="30" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="F1G-QW-qPW"/>
+                                    <constraint firstAttribute="height" constant="50" id="pWp-4l-4JA"/>
+                                </constraints>
+                                <state key="normal" image="compass"/>
+                                <connections>
+                                    <action selector="centralizarJogador:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ky-vU-6Jn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onH-lN-wgI">
+                                <rect key="frame" x="162" y="607" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Hi3-VS-F4R"/>
+                                    <constraint firstAttribute="height" constant="50" id="I1h-O1-Lcd"/>
+                                </constraints>
+                                <state key="normal" image="pokeball"/>
+                                <connections>
+                                    <action selector="abrirPokedex:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B5l-dQ-nqT"/>
+                                    <segue destination="FB9-Jr-YFl" kind="presentation" id="WeZ-DQ-Fpt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8df-mB-AbP" secondAttribute="trailing" constant="10" id="22K-vc-kY4"/>
+                            <constraint firstAttribute="trailing" secondItem="V5y-oL-l0e" secondAttribute="trailing" id="7WM-iP-o7G"/>
+                            <constraint firstItem="V5y-oL-l0e" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="I0W-Aw-T7f"/>
+                            <constraint firstItem="V5y-oL-l0e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nol-vZ-839"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="onH-lN-wgI" secondAttribute="bottom" constant="10" id="diE-SJ-0sb"/>
+                            <constraint firstItem="onH-lN-wgI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fSa-Xm-QTQ"/>
+                            <constraint firstItem="8df-mB-AbP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="gHv-4A-lwq"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V5y-oL-l0e" secondAttribute="bottom" id="l2b-yA-NnJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapa" destination="V5y-oL-l0e" id="noL-7Y-AKL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+        </scene>
+        <!--Poke Agenda View Controller-->
+        <scene sceneID="44e-8o-Zoo">
+            <objects>
+                <viewController id="FB9-Jr-YFl" customClass="PokeAgendaViewController" customModule="Pokemon_Go" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oRM-yo-abq"/>
+                        <viewControllerLayoutGuide type="bottom" id="MHj-Q6-Dap"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nRb-fJ-dIW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iLN-cd-GPT">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celula" id="ZLo-CB-ueW">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZLo-CB-ueW" id="wAl-TN-Fco">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FB9-Jr-YFl" id="A9b-Yc-39i"/>
+                                    <outlet property="delegate" destination="FB9-Jr-YFl" id="vbV-dk-BR7"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oZI-AQ-Vcn">
+                                <rect key="frame" x="162.5" y="607" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NDx-wR-sSQ"/>
+                                    <constraint firstAttribute="width" constant="50" id="rCL-fe-dOj"/>
+                                </constraints>
+                                <state key="normal" image="map"/>
+                                <connections>
+                                    <action selector="voltarMapa:" destination="FB9-Jr-YFl" eventType="touchUpInside" id="jiN-5r-gTI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="iLN-cd-GPT" secondAttribute="trailing" id="7Dh-nH-EvQ"/>
+                            <constraint firstItem="iLN-cd-GPT" firstAttribute="top" secondItem="oRM-yo-abq" secondAttribute="bottom" id="XzY-vI-Fkm"/>
+                            <constraint firstItem="iLN-cd-GPT" firstAttribute="leading" secondItem="nRb-fJ-dIW" secondAttribute="leading" id="nyK-re-zKZ"/>
+                            <constraint firstItem="oZI-AQ-Vcn" firstAttribute="centerX" secondItem="nRb-fJ-dIW" secondAttribute="centerX" id="sog-u6-bGb"/>
+                            <constraint firstItem="MHj-Q6-Dap" firstAttribute="top" secondItem="iLN-cd-GPT" secondAttribute="bottom" id="t8i-0n-9zh"/>
+                            <constraint firstItem="MHj-Q6-Dap" firstAttribute="top" secondItem="oZI-AQ-Vcn" secondAttribute="bottom" constant="10" id="u7c-Ma-jRx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fz6-Td-YdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="124"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compass" width="512" height="512"/>
+        <image name="map" width="512" height="512"/>
+        <image name="pokeball" width="512" height="512"/>
+    </resources>
+</document>
