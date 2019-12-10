@@ -3,12 +3,12 @@ import { connect } from 'react-redux'
 import { StyleSheet, FlatList, View } from 'react-native'
 import Header from '../components/Header'
 import Post from '../components/Post'
-// import { fetchPosts } from '../store/actions/posts'
+import { fetchPosts } from '../store/actions/posts'
 
 class Feed extends Component {
-    // componentDidMount = () => {
-    //     this.props.onFetchPosts()
-    // }
+    componentDidMount = () => {
+        this.props.onFetchPosts()
+    }
 
     render() {
         return (
@@ -41,10 +41,10 @@ const mapStateToProps = ({ posts }) => {
     }
 }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         onFetchPosts: () => dispatch(fetchPosts())
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        onFetchPosts: () => dispatch(fetchPosts())
+    }
+}
 
-export default connect(mapStateToProps/*, mapDispatchToProps*/)(Feed)
+export default connect(mapStateToProps, mapDispatchToProps)(Feed)

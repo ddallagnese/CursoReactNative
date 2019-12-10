@@ -12,9 +12,8 @@ class Post extends Component {
             <AddComment postId={this.props.id} /> : null
         return (
             <View style={styles.container}>
-                <Image source={ this.props.image } style={styles.image} />
+                <Image source={{ uri: this.props.image }} style={styles.image} />
                 <Author email={this.props.email} nickname={this.props.nickname}/>
-                {/* <Image source={{ uri: this.props.image }} style={styles.image} /> */}
                 <Comments comments={this.props.comments} />
                 {addComment}
             </View>

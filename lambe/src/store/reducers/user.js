@@ -8,7 +8,7 @@ import {
 const initialState = {
     name: null,
     email: null,
-    // isLoading: false,
+    isLoading: false,
     // token: null,
 }
 
@@ -27,16 +27,16 @@ const reducer = (state = initialState, action) => {
                 name: null,
                 email: null
             }
-        // case LOADING_USER:
-        //     return {
-        //         ...state,
-        //         isLoading: true
-        //     }
-        // case USER_LOADED:
-        //     return {
-        //         ...state,
-        //         isLoading: false
-        //     }
+        case LOADING_USER:
+            return {
+                ...state,
+                isLoading: true
+            }
+        case USER_LOADED:
+            return {
+                ...state,
+                isLoading: false
+            }
         default:
             return state
     }
