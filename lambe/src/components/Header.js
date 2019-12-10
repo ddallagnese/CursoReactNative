@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderBottomWidth: 1,
         borderColor: '#BBB',
-        // width: '100%',
+        width: '100%',
         // flexDirection: 'row',
         // justifyContent: 'space-between',
     },

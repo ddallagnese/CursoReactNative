@@ -1,0 +1,4 @@
+react-native run-is --simulator="iPhone 7"
+react-native run-android
+emulator -list-avds
+emulator -avd XXX
