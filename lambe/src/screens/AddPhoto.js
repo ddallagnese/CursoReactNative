@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { addPost } from '../store/actions/posts'
+import { connect } from 'react-redux'
+import { addPost } from '../store/actions/posts'
 import {
     View,
     Text,
@@ -15,7 +15,7 @@ import {
 } from 'react-native'
 import ImagePicker from 'react-native-image-picker'
 
-// const noUser = 'Você precisa estar logado para adicionar imagens'
+const noUser = 'Você precisa estar logado para adicionar imagens'
 
 class AddPhoto extends Component {
     state = {
@@ -34,10 +34,10 @@ class AddPhoto extends Component {
     // }
 
     pickImage = () => {
-        // if (!this.props.name) {
-        //     Alert.alert('Falha!', noUser)
-        //     return
-        // }
+        if (!this.props.name) {
+            Alert.alert('Falha!', noUser)
+            return
+        }
 
         ImagePicker.showImagePicker({
             title: 'Escolha a imagem',
@@ -51,22 +51,24 @@ class AddPhoto extends Component {
     }
 
     save = async () => {
-        Alert.alert('Imagem adicionada', this.state.comment)
-        // if (!this.props.name) {
-        //     Alert.alert('Falha!', noUser)
-        //     return
-        // }
+        if (!this.props.name) {
+            Alert.alert('Falha!', noUser)
+            return
+        }
 
-        // this.props.onAddPost({
-        //     id: Math.random(),
-        //     nickname: this.props.name,
-        //     email: this.props.email,
-        //     image: this.state.image,
-        //     comments: [{
-        //         nickname: this.props.name,
-        //         comment: this.state.comment
-        //     }]
-        // })
+        this.props.onAddPost({
+            id: Math.random(),
+            nickname: this.props.name,
+            email: this.props.email,
+            image: this.state.image,
+            comments: [{
+                nickname: this.props.name,
+                comment: this.state.comment
+            }]
+        })
+
+        this.setState({ image: null, comment: ''})
+        this.props.navigation.navigate('Feed')
     }
 
     render() {
@@ -84,7 +86,7 @@ class AddPhoto extends Component {
                     </TouchableOpacity>
                     <TextInput placeholder='Algum comentário para a foto?'
                         style={styles.input} value={this.state.comment}
-                        // editable={this.props.name != null}
+                        editable={this.props.name != null}
                         onChangeText={comment => this.setState({ comment })} />
                     <TouchableOpacity onPress={this.save}
                         // disabled={this.props.loading}
@@ -137,20 +139,20 @@ const styles = StyleSheet.create({
     }
 })
 
-export default AddPhoto
+// export default AddPhoto
 
-// const mapStateToProps = ({ user, posts }) => {
-//     return {
-//         email: user.email,
-//         name: user.name,
-//         loading: posts.isUploading
-//     }
-// }
+const mapStateToProps = ({ user/*, posts*/ }) => {
+    return {
+        email: user.email,
+        name: user.name,
+        // loading: posts.isUploading
+    }
+}
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         onAddPost: post => dispatch(addPost(post))
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        onAddPost: post => dispatch(addPost(post))
+    }
+}
 
-// export default connect(mapStateToProps, mapDispatchToProps)(AddPhoto)
+export default connect(mapStateToProps, mapDispatchToProps)(AddPhoto)

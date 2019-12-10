@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import { connect } from 'react-redux'
-// import { login } from '../store/actions/user'
+import { connect } from 'react-redux'
+import { login } from '../store/actions/user'
 import {
     View,
     Text,
@@ -11,7 +11,7 @@ import {
 
 class Login extends Component {
     state = {
-        // name: 'Temporario',
+        name: 'Temporário',
         email: '',
         password: ''
     }
@@ -23,7 +23,7 @@ class Login extends Component {
     // }
 
     login = () => {
-        // this.props.onLogin({ ...this.state })
+        this.props.onLogin({ ...this.state })
         this.props.navigation.navigate('Profile')
     }
 
@@ -81,11 +81,12 @@ const styles = StyleSheet.create({
 //     }
 // }
 
-// const mapDispatchToProps = dispatch => {
-//     return {
-//         onLogin: user => dispatch(login(user))
-//     }
-// }
+const mapDispatchToProps = dispatch => {
+    return {
+        onLogin: user => dispatch(login(user))
+    }
+}
 
-export default Login
+// export default Login
+export default connect(null, mapDispatchToProps)(Login)
 // export default connect(mapStateToProps, mapDispatchToProps)(Login)
