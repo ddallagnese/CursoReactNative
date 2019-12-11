@@ -16,16 +16,16 @@ class Register extends Component {
         password: ''
     }
 
-    // componentDidUpdate = prevProps => {
-    //     if (prevProps.isLoading && !this.props.isLoading) {
-    //         this.setState({
-    //             name: '',
-    //             email: '',
-    //             password: ''
-    //         })
-    //         this.props.navigation.navigate('Profile') // Feed
-    //     }
-    // }
+    componentDidUpdate = prevProps => {
+        if (prevProps.isLoading && !this.props.isLoading) {
+            this.setState({
+                name: '',
+                email: '',
+                password: ''
+            })
+            this.props.navigation.navigate('Profile') // Feed
+        }
+    }
 
     render() {
         return (
@@ -75,11 +75,11 @@ const styles = StyleSheet.create({
     }
 })
 
-// const mapStateToProps = ({ user }) => {
-//     return {
-//         isLoading: user.isLoading
-//     }
-// }
+const mapStateToProps = ({ user }) => {
+    return {
+        isLoading: user.isLoading
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -87,5 +87,5 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null,/*mapStateToProps, */mapDispatchToProps)(Register)
+export default connect(mapStateToProps, mapDispatchToProps)(Register)
 // export default Register
